@@ -1,0 +1,23 @@
+<nav class="bg-gray-800 shadow-sm">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 justify-between">
+      <div class="flex items-center">
+        <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+          <% if authenticated? %>
+            Welcome <%= Current.user.email_address%>
+          <% end %>
+          <%#= link_to "Posts", posts_path, class: "inline-flex items-center border-b-2 border-indigo-400 px-1 pt-1 text-sm font-medium text-gray-100" %>
+        </div>
+      </div>
+      <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+        <% if authenticated? %>
+          <%= link_to "Create Event", new_event_path, class: "mt-2 rounded-lg py-3 px-5 bg-gray-700 text-gray-100 font-medium hover:bg-gray-600 h-fit"  %>
+          <%#= link_to "Show My Events", , class: "mt-2 rounded-lg py-3 px-5 bg-gray-700 text-gray-100 font-medium hover:bg-gray-600 h-fit"  %>
+          <%= button_to "Logout", session_path, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-700 text-gray-100 font-medium hover:bg-gray-600" %>
+        <% else %>
+          <%= link_to "Login", new_session_path, class: "mt-2 rounded-lg py-3 px-5 bg-gray-700 text-gray-100 font-medium hover:bg-gray-600 h-fit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

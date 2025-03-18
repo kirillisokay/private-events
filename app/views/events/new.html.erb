@@ -1,0 +1,13 @@
+<%= form_with(model: @event, class: "grid grid-rows-auto gap-y-6") do |form|%>
+  <div class="">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-600 bg-gray-700 text-gray-100 outline-none px-3 py-2 mt-2 w-full focus:border-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50"%>
+  </div>
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body, class: "block shadow rounded-md border border-gray-600 bg-gray-700 text-gray-100 outline-none px-3 py-2 mt-2 w-full focus:border-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50" %>
+  </div>
+  <div>
+    <%= form.submit "Create Event",class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>
